@@ -44,4 +44,20 @@ def fetch_eq_data(period='daily', region='Worldwide', min_mag=1):
 
     df_eq['time'] = pd.to_datetime(df_eq.time)
 
+    #Set lat and long to default if region is not in df
+    if region in df_eq.area.to_list():
+        df_eq = df_eq[df_eq['area']==region]
+        max_mag = df_eq.mag.max()
+        center_lat = df_eq[df_eq.mag==max_mag].latitude.values[0]
+        center_lon = df_eq[df_eq.mag==max_mag].longitude.values[0]
+    else:
+        center_lat, center_lon = [54,15]
+
+    #Set cols for animation frames
+    #weekdays, dates, hours
+    if period == 'weekly':
+        animation_frame_col = 'weekday'
+        df_eq[animation_frame_col]= df_eq.time # TBD
+    
+    
 # Create Visualizer
