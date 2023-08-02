@@ -41,9 +41,4 @@ We welcome contributions! For bug fixes, issues or suggestions.If you find a bug
 
 This project is licensed under the MIT License. For details, refer to the [LICENSE](LICENSE) file.
 
-Code snippets from Bootstrap are used in this project. The license for Bootstrap can be found in the [LICENSE-BOOTSTRAP.md](LICENSE-BOOTSTRAP.md) file.
-
-
-
-
 Copyright (c) 2023 Saksham Kumar
