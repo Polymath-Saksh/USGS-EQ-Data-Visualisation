@@ -35,11 +35,11 @@ python app.py
 
 ## Contributing
 
-We welcome contributions! For bug fixes, issues or suggestions.If you find a bug, have a feature request, or want to improve the code, please feel free to open an issue or submit a pull request. Ensure to follow the contribution guidelines specified in the repository under the [LICENSE](LICENSE.md) section.
+We welcome contributions! For bug fixes, issues or suggestions.If you find a bug, have a feature request, or want to improve the code, please feel free to open an issue or submit a pull request. Ensure to follow the contribution guidelines specified in the repository under the [LICENSE](LICENSE) section.
 
 ## License
 
-This project is licensed under the MIT License. For details, refer to the [LICENSE.md](LICENSE.md) file.
+This project is licensed under the MIT License. For details, refer to the [LICENSE](LICENSE) file.
 
 Code snippets from Bootstrap are used in this project. The license for Bootstrap can be found in the [LICENSE-BOOTSTRAP.md](LICENSE-BOOTSTRAP.md) file.
 
