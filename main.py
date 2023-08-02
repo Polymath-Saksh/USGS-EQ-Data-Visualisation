@@ -103,4 +103,4 @@ def visualize_eq_data(period='daily', region='Worldwide',min_mag=1):
 
     return None
 
-visualize_eq_data(period='monthly')
+visualize_eq_data()

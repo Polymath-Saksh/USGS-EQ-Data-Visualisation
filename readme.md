@@ -17,4 +17,33 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.csv
 
 https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv
 
-# Requirements
+## Requirements
+
+- Run the command below to install the required packages
+
+```python
+pip install -r requirements.txt
+```
+
+- Internet connection is required to run the application (For retrieving the data from the USGS website)
+
+## How to run the application
+
+```python
+python app.py
+```
+
+## Contributing
+
+We welcome contributions! For bug fixes, issues or suggestions.If you find a bug, have a feature request, or want to improve the code, please feel free to open an issue or submit a pull request. Ensure to follow the contribution guidelines specified in the repository under the [LICENSE](LICENSE.md) section.
+
+## License
+
+This project is licensed under the MIT License. For details, refer to the [LICENSE.md](LICENSE.md) file.
+
+Code snippets from Bootstrap are used in this project. The license for Bootstrap can be found in the [LICENSE-BOOTSTRAP.md](LICENSE-BOOTSTRAP.md) file.
+
+
+
+
+Copyright (c) 2023 Saksham Kumar
