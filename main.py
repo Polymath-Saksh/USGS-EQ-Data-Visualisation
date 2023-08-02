@@ -11,6 +11,16 @@ def extract_subarea(place):
 def extract_area(place):
     return place[-1]
 
+def extract_date(time):
+    return str(time).split(' ')[0]
+
+def extract_weekday(time):
+    date = extract_date(time)
+    return date + '-' + str(time.weekday())
+
+def extract_hour(time):
+    t = str(time).split(' ')
+    return t[0] + '-' + t[1].split(':')[0] 
 #Fetch data and clean it
 
 def fetch_eq_data(period='daily', region='Worldwide', min_mag=1):
@@ -57,7 +67,17 @@ def fetch_eq_data(period='daily', region='Worldwide', min_mag=1):
     #weekdays, dates, hours
     if period == 'weekly':
         animation_frame_col = 'weekday'
-        df_eq[animation_frame_col]= df_eq.time # TBD
+        df_eq[animation_frame_col]= df_eq.time.apply(extract_weekday)
+    elif period == 'monthly':
+        animation_frame_col = 'date'
+        df_eq[animation_frame_col]= df_eq.time.apply(extract_date)
+    else:
+        animation_frame_col = 'hours'
+        df_eq[animation_frame_col]= df_eq.time.apply(extract_hour)
     
-    
+
+    df_eq = df_eq.sort_values(by='time')
+
+    return df_eq, center_lat, center_lon
+
 # Create Visualizer
