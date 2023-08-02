@@ -24,18 +24,18 @@ def extract_hour(time):
 #Fetch data and clean it
 
 def fetch_eq_data(period='daily', region='Worldwide', min_mag=1):
-    source='https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/{?}.csv'
+    source='https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/{}.csv'
 
     #Set frequency of data
     if period == 'weekly':
-        source = source.format('all_week')
+        new_source = source.format('all_week')
     elif period == 'monthly':
-        source = source.format('all_month')
+        new_source = source.format('all_month')
     else:
-        source = source.format('all_day')
+        new_source = source.format('all_day')
     
     #Fetch data and extract relevant columns
-    df_eq = pd.read_csv(source)
+    df_eq = pd.read_csv(new_source)
     df_eq = df_eq[['time','latitude','longitude','mag','place']]
 
     #Extract sub-areas in place cols
@@ -93,8 +93,14 @@ def visualize_eq_data(period='daily', region='Worldwide',min_mag=1):
         size = 'mag',
         color = 'mag',
         hover_name = 'sub_area',
-        zoom = 1
+        zoom = 1,
         mapbox_style='carto-positron',
         animation_frame=animation_frame_col,
         title='Earthquakes'
     )
+
+    fig.show()
+
+    return None
+
+visualize_eq_data(period='monthly')
