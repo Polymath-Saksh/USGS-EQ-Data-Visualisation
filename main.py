@@ -78,6 +78,23 @@ def fetch_eq_data(period='daily', region='Worldwide', min_mag=1):
 
     df_eq = df_eq.sort_values(by='time')
 
-    return df_eq, center_lat, center_lon
+    return df_eq, center_lat, center_lon, animation_frame_col
 
 # Create Visualizer
+
+def visualize_eq_data(period='daily', region='Worldwide',min_mag=1):
+    df_eq, center_lat, center_lon,animation_frame_col = fetch_eq_data(period = period, region = region, min_mag = min_mag)
+
+    fig = px.scatter_mapbox(
+        data_frame=df_eq,
+        lat='latitude',
+        lon='longitude',
+        center=dict(lat=center_lat, lon=center_lon),
+        size = 'mag',
+        color = 'mag',
+        hover_name = 'sub_area',
+        zoom = 1
+        mapbox_style='carto-positron',
+        animation_frame=animation_frame_col,
+        title='Earthquakes'
+    )
